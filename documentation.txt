@@ -5,7 +5,7 @@ This project aims to simulate neural activity using the NeuroSynth library and a
 
 1. Installation:
    - Install NeuroSynth and other necessary dependencies:
-   
+
      pip install neurosynth
      pip install numpy
      pip install matplotlib
@@ -13,39 +13,38 @@ This project aims to simulate neural activity using the NeuroSynth library and a
 2. Usage:
 
    a. Creating a NeuroSynth Dataset:
-      - `create_neurosynth_object(terms, coordinates)`
-        - `terms` (list): List of terms to be used.
-        - `coordinates` (list): List of coordinates.
+      - create_neurosynth_object(terms, coordinates)
+        - terms (list): List of terms to be used.
+        - coordinates (list): List of coordinates.
         - Returns a NeuroSynth dataset object.
 
    b. Generating Synthetic fMRI Image:
-      - `generate_synthetic_fmri_image(dataset, num_voxels)`
-        - `dataset` (neurosynth.Dataset): NeuroSynth dataset object.
-        - `num_voxels` (int): Number of voxels for the synthetic fMRI image.
+      - generate_synthetic_fmri_image(dataset, num_voxels)
+        - dataset (neurosynth.Dataset): NeuroSynth dataset object.
+        - num_voxels (int): Number of voxels for the synthetic fMRI image.
         - Returns a numpy array representing the synthetic fMRI image.
 
    c. Applying Signal Detection:
-      - `apply_signal_detection(fMRI_image, method)`
-        - `fMRI_image` (numpy.ndarray): Synthetic fMRI image.
-        - `method` (str): Signal detection method ('thresholding', 'clustering', etc.).
+      - apply_signal_detection(fMRI_image, method)
+        - fMRI_image (numpy.ndarray): Synthetic fMRI image.
+        - method (str): Signal detection method ('thresholding', 'clustering', etc.).
         - Returns a numpy array representing the detection result.
 
    d. Comparing Results:
-      - `compare_results(result, ground_truth)`
-        - `result` (numpy.ndarray): Detection result.
-        - `ground_truth` (numpy.ndarray): Ground truth data.
+      - compare_results(result, ground_truth)
+        - result (numpy.ndarray): Detection result.
+        - ground_truth (numpy.ndarray): Ground truth data.
         - Returns accuracy and error rate.
 
    e. Plotting Results:
-      - `plot_results(fMRI_image, result, ground_truth)`
-        - `fMRI_image` (numpy.ndarray): Synthetic fMRI image.
-        - `result` (numpy.ndarray): Detection result.
-        - `ground_truth` (numpy.ndarray): Ground truth data.
+      - plot_results(fMRI_image, result, ground_truth)
+        - fMRI_image (numpy.ndarray): Synthetic fMRI image.
+        - result (numpy.ndarray): Detection result.
+        - ground_truth (numpy.ndarray): Ground truth data.
         - Plots the synthetic fMRI image, detection result, and ground truth.
 
 3. Example Use Case:
-   
-   ```python
+
    import neurosynth_simulation
 
    # Creating a NeuroSynth Dataset

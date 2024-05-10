@@ -1,12 +1,8 @@
-1. This project aims to simulate neural activity using the NeuroSynth library and assess various signal detection and classification methods.
-   Firstly, a function will utilize NeuroSynth to create a synthetic fMRI image based on specified terms and coordinates.
-   Subsequently, another function will apply signal detection or classification techniques, such as thresholding, clustering, or decoding, to the generated image and produce a result.
-   Finally, a function will compare and visually plot the outcome against the ground truth, evaluating the accuracy and error rate of the chosen method.
-   This project facilitates exploration and assessment of different approaches in analyzing neural signals for research or diagnostic purposes.
+1. This program generates a random rap song using the pronouncing library in Python. It utilizes various functions to find rhyming words, generate additional lines, select words and       lyrics randomly, and create memes based on the generated rap song. The program generates a random rap song using the pronouncing library. It selects a random word and finds rhyming     words for it to construct the rap song. A function is provided to find rhyming words for a given word using the pronouncing library. It returns a list of rhyming words. Another         function generates additional lines for the rap song. Each line is constructed by selecting a random word, finding rhyming words for it, and combining it with a rhyming word chosen     in the first line. The number of lines in each rap song varies between 4 and 8 to add complexity and variability to the output. The program uses the random library to select words      and lyrics from the lists, combining them into a rap song. The program utilizes the Python Imaging Library (PIL) to generate a meme based on the randomly generated rap song. It         saves the meme in the same directory as the script.
 
-
-2. a) create_neurosynth_object: This function creates a NeuroSynth object with a given set of terms and coordinates, enabling the generation of synthetic fMRI images.
-   b) generate_synthetic_fmri_image: This function generates a synthetic fMRI image based on the provided NeuroSynth dataset and a specified number of voxels.
-   c) apply_signal_detection: This function applies a signal detection method (such as thresholding or clustering) to the synthetic fMRI image, producing a detection result.
+2. a) find_rhymes(word): This function finds rhyming words for a given word
+   b) generate_rap_song(): This function generates a random rap song
+   c) generate_line(chosen_rhyme): This function generates a line for the rap song
+   d) create_meme(text): This function creates a meme image with the rap song text
 
 

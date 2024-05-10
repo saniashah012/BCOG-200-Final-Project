@@ -43,11 +43,11 @@ def create_meme(text):
     # Define text position
     text_position = (120, 50)
 
-    lines = text.split("\n")
-    text_with_newlines = "\n".join([line + "\n" for line in lines])
+    #lines = text.split("\n")
+    #text_with_newlines = "\n".join([line + "\n" for line in lines])
 
     # Add text to the image
-    draw.multiline_text(text_position, text_with_newlines, fill="black")
+    #draw.multiline_text(text_position, text_with_newlines, fill="black")
 
 
     # Add text to the image

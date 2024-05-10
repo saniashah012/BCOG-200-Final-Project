@@ -18,3 +18,29 @@ Expected Result:
 The program should successfully generate a random rap song and create a meme based on it.
 The generated meme image should contain the text of the rap song.
 '''
+
+import pytest
+from python_script import generate_rap_song, find_rhymes, generate_line, create_meme
+
+# Test generate_rap_song function
+def test_generate_rap_song():
+    rap_song = generate_rap_song()
+    assert isinstance(rap_song, str)
+    assert len(rap_song) > 0
+
+# Test find_rhymes function
+def test_find_rhymes():
+    rhymes = find_rhymes("love")
+    assert isinstance(rhymes, list)
+    assert len(rhymes) > 0
+
+# Test generate_line function
+def test_generate_line():
+    line = generate_line("love")
+    assert isinstance(line, str)
+    assert len(line) > 0
+
+# Add more test functions as needed...
+
+if __name__ == "__main__":
+    pytest.main()

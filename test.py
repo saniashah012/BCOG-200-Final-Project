@@ -1,14 +1,20 @@
-import neurosynth_simulation
+'''
+Download the meme template image.
+Open a terminal or command prompt and navigate to the directory containing the script and meme template image.
 
-def test_neurosynth_simulation():
-    # Example test case
-    dataset = neurosynth_simulation.create_neurosynth_object(["task", "emotion"], [(0, 0, 0), (1, 1, 1)])
-    fMRI_image = neurosynth_simulation.generate_synthetic_fmri_image(dataset, 100)
-    result = neurosynth_simulation.apply_signal_detection(fMRI_image, "thresholding")
-    ground_truth = np.random.randint(0, 2, size=(100, 100, 100))  # Random ground truth for testing
-    accuracy, error_rate = neurosynth_simulation.compare_results(result, ground_truth)
-    assert accuracy >= 0 and accuracy <= 1
-    assert error_rate >= 0 and error_rate <= 1
+Run the script using Python: python3 python_script.py
+Follow the prompts to generate a random rap song.
+Creating a Meme:
 
-if __name__ == "__main__":
-    test_neurosynth_simulation()
+After the rap song is generated, the program will prompt you to create a meme based on the rap song.
+Confirm to create the meme.
+Verification:
+
+Check the directory where the script is located for the generated meme image (rap_meme.jpg).
+Open the meme image to verify that it contains the generated rap song text.
+Example Data:
+The example data for testing includes the meme template image (meme_template.jpg) and any random rap songs generated during the test.
+Expected Result:
+The program should successfully generate a random rap song and create a meme based on it.
+The generated meme image should contain the text of the rap song.
+'''

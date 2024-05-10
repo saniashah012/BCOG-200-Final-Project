@@ -1,68 +1,88 @@
-"'"
-import neurosynth
-import numpy as np
-import matplotlib.pyplot as plt
+import random
+import pronouncing
+from PIL import Image, ImageDraw, ImageFont
 
-def create_neurosynth_object(terms, coordinates):
-  
-    Creates a NeuroSynth object with given terms and coordinates.
+# Function to find rhyming words for a given word
+def find_rhymes(word):
+    rhymes = pronouncing.rhymes(word)
+    return rhymes
 
-    Args:
-    terms (list): List of terms to be used.
-    coordinates (list): List of coordinates.
+# Function to generate a random rap song
+def generate_rap_song():
+    # Generate a random word
+    random_word = random.choice(pronouncing.cmudict.words())
 
-    Returns:
-    neurosynth.Dataset: NeuroSynth dataset object.
-    pass
+    # Find rhyming words for the random word
+    rhyming_words = find_rhymes(random_word)
 
-def generate_synthetic_fmri_image(dataset, num_voxels):
+    # If no rhyming words found, return None
+    if not rhyming_words:
+        return None
 
-    Generates a synthetic fMRI image based on the provided NeuroSynth dataset.
+    # Choose a random rhyming word
+    chosen_rhyme = random.choice(rhyming_words)
 
-    Args:
-    dataset (neurosynth.Dataset): NeuroSynth dataset object.
-    num_voxels (int): Number of voxels for the synthetic fMRI image.
+    # Generate the rap song
+    rap_song = f"{random_word.capitalize()} {chosen_rhyme}\n"
 
-    Returns:
-    numpy.ndarray: Synthetic fMRI image.
+    # Add more lines to the rap song
+    num_lines = random.randint(4, 8)
+    for _ in range(num_lines):
+        line = generate_line(chosen_rhyme)
+        rap_song += line + "\n"
 
-    pass
+    return rap_song
 
-def apply_signal_detection(fMRI_image, method):
+def create_meme(text):
+    # Load meme template image
+    meme_template = Image.open("meme_template.jpg")  # Replace with your meme template image path
 
-    Applies a signal detection method to the synthetic fMRI image.
+    # Create a drawing context
+    draw = ImageDraw.Draw(meme_template)
 
-    Args:
-    fMRI_image (numpy.ndarray): Synthetic fMRI image.
-    method (str): Signal detection method ('thresholding', 'clustering', etc.).
+    # Define text position
+    text_position = (120, 50)
 
-    Returns:
-    numpy.ndarray: Detection result.
-    pass
+    lines = text.split("\n")
+    text_with_newlines = "\n".join([line + "\n" for line in lines])
 
-def compare_results(result, ground_truth):
-    Compares the detection result with the ground truth and evaluates accuracy/error rate.
+    # Add text to the image
+    draw.multiline_text(text_position, text_with_newlines, fill="black")
 
-    Args:
-    result (numpy.ndarray): Detection result.
-    ground_truth (numpy.ndarray): Ground truth data.
 
-    Returns:
-    float: Accuracy.
-    float: Error rate.
-    pass
+    # Add text to the image
+    draw.text(text_position, text, fill="black")
 
-def plot_results(fMRI_image, result, ground_truth):
-    Plots the synthetic fMRI image, detection result, and ground truth.
+    # Save the meme image
+    meme_template.save("rap_meme.jpg")
 
-    Args:
-    fMRI_image (numpy.ndarray): Synthetic fMRI image.
-    result (numpy.ndarray): Detection result.
-    ground_truth (numpy.ndarray): Ground truth data.
-    pass
 
-if __name__ == "__main__":
-    # Example usage of the functions
-    pass
 
-"'"
+# Function to generate a line for the rap song
+def generate_line(chosen_rhyme):
+    # Generate a random word
+    random_word = random.choice(pronouncing.cmudict.words())
+
+    # Find rhyming words for the random word
+    rhyming_words = find_rhymes(random_word)
+
+    # If no rhyming words found, use the chosen rhyme as a fallback
+    if not rhyming_words:
+        return f"{random_word.capitalize()} {chosen_rhyme}"
+
+    # Choose a random rhyming word
+    chosen_rhyme = random.choice(rhyming_words)
+
+    return f"{random_word.capitalize()} {chosen_rhyme}"
+
+# Generate and print a random rap song
+random_rap_song = generate_rap_song()
+if random_rap_song:
+    print("Random Rap Song:")
+    print(random_rap_song)
+
+    create_meme(random_rap_song)
+    print("Meme created successfully!")
+
+else:
+    print("Sorry, couldn't generate a rap song.")
